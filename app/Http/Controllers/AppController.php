@@ -107,7 +107,7 @@ class AppController extends Controller
     * @return \Illuminate\Http\Response [$blogs, $pictures]
     */
     public function ShowLastFive() {
-      $blogs = Blog::orderBy('id', 'asc')->take(5)->get();
+      $blogs = Blog::orderBy('id', 'desc')->take(5)->get();
 
       return view('welcome')->with([
         'blogs' => $blogs
