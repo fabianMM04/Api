@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AppController@ShowLastFive');                                    // Show the welcome view and the last five blog instances with their photos
 
-Route::get('/show/{id}', 'AppController@Show')->name('show');
 
-Route::get('/create/blog', 'AppController@ShowForm');
+Route::get('/create/blog', 'AppController@ShowForm');                             // Show a form to create a blog instance
+Route::post('/post/blog', 'AppController@Post');                                  // Post a blog instance (Request)
 
-Route::post('/post/blog', 'AppController@Post');
+Route::get('/show/{id}', 'AppController@Show');                                   // Show a particular blog with their photos

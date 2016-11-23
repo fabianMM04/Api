@@ -17,7 +17,7 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
 
             $table->integer('blog_id');
-            $table->string('path');
+            $table->string('name');
 
             $table->timestamps();
         });
